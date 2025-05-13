@@ -1,11 +1,24 @@
 import streamlit as st
-from snowflake.snowpark.context import get_active_session
+from snowflake.snowpark import Session
 from snowflake.snowpark.functions import col
 import pandas as pd
 
 st.title("Zena's Amazing Athleisure Catalog")
 
-session = get_active_session()
+# Correct structure for connection parameters
+connection_parameters = {
+    "account": "NKFUYSQ-FLB99206",
+    "user": "zachahrens33",
+    "password": "@2400Sndy!@#$%",  # Replace or use st.secrets
+    "role": "SYSADMIN",
+    "warehouse": "COMPUTE_WH",
+    "database": "ZENAS_ATHLEISURE_DB",
+    "schema": "PRODUCTS",
+    "client_session_keep_alive": True
+}
+
+# Create the session
+session = Session.builder.configs(connection_parameters).create()
 
 # get a list of colors for a drop list selection
 table_colors = session.sql("select color_or_style from catalog_for_website")
