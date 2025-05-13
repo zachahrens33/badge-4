@@ -2,3 +2,4 @@
 streamlit
 pandas
 snowflake-snowpark-python
+snowflake-snowpark-functions
