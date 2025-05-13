@@ -1,7 +1,4 @@
 # requirements.txt
-snowflake-snowpark-python
-snowflake-snowpark-context
-streamlit
-requests
+streamlit>=1.32.0
 pandas
-snowflake-snowpark-python[pandas]
+snowflake-snowpark-python==1.10.0
