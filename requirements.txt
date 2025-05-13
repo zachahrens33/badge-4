@@ -1,4 +1,4 @@
 # requirements.txt
 streamlit>=1.32.0
 pandas
-snowflake-snowpark-python==1.10.0
+snowflake-snowpark-python
